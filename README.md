@@ -44,7 +44,7 @@ var splitCb = require('splitcb'), nodeback;
 nodeback = splitCb();
 readLatestPost(nodeback); // ignore result if success, throw error otherwise
 
-function displayPost(topic, text) { console.log(topic, ':', text); }
+function displayPost(topic, text) { console.log(topic + ':', text); }
 nodeback = splitCb(displayPost);
 readLatestPost(nodeback); // displayPost or throw error
 

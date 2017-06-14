@@ -4,15 +4,16 @@
 
 try { require('usnam-pmb'); } catch (ignore) {}
 
+
 var eq = require('equal-pmb'), splitCb = require('splitcb'),
   bad = new Error('Something bad happened');
+
+require('./usage.js').verify(eq);
+
 
 function err2str(e) { return String((e || false).message || e); }
 function concatIf(a, b) { return (b ? a.concat(b) : a); }
 function typ3(x) { return String(x && typeof x).substr(0, 3); }
-
-
-require('./usage.js')({ stub: 'fake console', log: typ3 });
 
 
 function makeLoggingCb(sxs, err) {
